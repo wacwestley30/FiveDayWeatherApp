@@ -1,14 +1,12 @@
 :root {
-    --lightBlue: rgba(45,166,255,1);
-    --lightBlueHover: rgb(39, 142, 216);
-    --blue: rgba(58,58,255,1);
-    --darkBlue: rgba(6,6,93,1);
-    --fiveDay: rgba(2, 45, 80, 1);
+    --lightBlue: rgba(64,96,126,1);
+    --blue: rgba(17,56,92,1);
+    --darkBlue: rgba(25,42,63,1);
 }
 
 header {
-    background: rgb(45,166,255);
-    background: linear-gradient(90deg, rgba(45,166,255,1) 0%, rgba(58,58,255,1) 50%, rgba(6,6,93,1) 100%);
+    background: rgb(64,96,126);
+    background: linear-gradient(90deg, rgba(64,96,126,1) 0%, rgba(17,56,92,1) 50%, rgba(25,42,63,1) 100%);
     color: white;
 }
 
@@ -18,12 +16,12 @@ header {
 }
 
 .btn-lightBlue:hover {
-    background-color: var(--lightBlueHover);
+    background-color: var(--blue);
     color: white;
 }
 
 .fiveDayBlock {
-    background-color: var(--fiveDay);
+    background-color: var(--darkBlue);
     color: white;
 }
 

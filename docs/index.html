@@ -17,66 +17,67 @@
         <div class="row">
             <div class="col-3">
                 <div class="row">
-                    <label for="citySearch">
-                        <h3 class="p-0">Search for a City:</h3>
-                    </label>
-                    <div class="border-bottom mb-3 p-0">
-                        <div class="input-group">
-                            <input id="citySearch" type="search" list="cityOptions" class="form-control mb-2" placeholder="City"/>
-                            <datalist id="cityOptions">
-                                <option value="Atlanta">
-                                <option value="Chicago">
-                                <option value="Los Angeles">
-                                <option value="New York">
-                                <option value="Seattle">
-                            </datalist>
-                        </div>
-                        <div class="input-group p-0">
-                            <button id="search-button" type="button" class="btn btn-lightBlue form-control mb-3">
-                                <span>Search</span>
-                            </button>
-                        </div>
-                    </div>
+                    <form id="searchForm" class="border-bottom mb-3 p-0">
+                        <label for="cityInput" class="form-label">
+                            <h3 class="p-0">Search for a City:</h3>
+                        </label>
+                        <input id="cityInput" name="cityInput" type="text" list="cityOptions" class="form-control form-input mb-2" placeholder="City"/>
+                        <datalist id="cityOptions">
+                            <option value="Atlanta">
+                            <option value="Chicago">
+                            <option value="Los Angeles">
+                            <option value="New York">
+                            <option value="Seattle">
+                        </datalist>
+                        <button id="searchButton" class="btn btn-lightBlue form-control mb-3">
+                            Search
+                        </button>
+                    </form>
                 </div>
                 <div id="history">
-                    <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                    <div id="cityOne" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
                             <span>City1</span>
-                        </button>
+                        </button> -->
                     </div>
                     <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                        <!-- <button id="cityTwo" class="btn btn-secondary mb-2">
                             <span>City2</span>
-                        </button>
+                        </button> -->
                     </div>
-                    <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                    <div id="cityThree" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
                             <span>City3</span>
-                        </button>
+                        </button> -->
                     </div>
-                    <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                    <div id="cityFour" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
                             <span>City4</span>
-                        </button>
+                        </button> -->
                     </div>
-                    <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                    <div id="cityFive" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
                             <span>City5</span>
-                        </button>
+                        </button> -->
                     </div>
-                    <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                    <div id="citySix" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
                             <span>City6</span>
-                        </button>
+                        </button> -->
                     </div>
-                    <div class="row">
-                        <button class="btn btn-secondary mb-2">
+                    <div id="citySeven" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
                             <span>City7</span>
-                        </button>
+                        </button> -->
+                    </div>
+                    <div id="cityEight" class="row">
+                        <!-- <button class="btn btn-secondary mb-2">
+                            <span>City8</span>
+                        </button> -->
                     </div>
                     <div class="row">
-                        <button class="btn btn-secondary mb-2">
-                            <span>City8</span>
+                        <button id="clearCityHistory" class="btn btn-outline-secondary mb-2">
+                            <span>Clear History</span>
                         </button>
                     </div>
                 </div>
@@ -84,10 +85,10 @@
             <div class="col-9 ps-4">
                 <div class="row">
                     <div id="currentDay" class="border border-black">
-                        <h3 class="mt-2">Current City</h3>
-                        <p>Temp: <span>70F</span></p>
-                        <p>Wind: <span>5MPH</span></p>
-                        <p>Humidity: <span>50%</span></p>
+                        <h3 id="currentCity" class="mt-2">Current City</h3>
+                        <p>Temp: <span id="currentCityTemp">70</span>&deg;F</p>
+                        <p>Wind: <span id="currentCityWind">5</span>MPH</p>
+                        <p>Humidity: <span id="currentCityHumidity">50</span>%</p>
                     </div>
                 </div>
                 <div class="row">
@@ -96,40 +97,40 @@
                             <h3 class="mt-3">5-day Forecast:</h3>
                         </div>
                         <div class="row text-center text-lg-start justify-content-between">
-                            <div id="fiveDayOne" class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
-                                <h5>Monday</h5>
-                                <i class='fas fa-sun' style='font-size:36px'></i>
-                                <p>Temp: <span>70F</span></p>
-                                <p>Wind: <span>5MPH</span></p>
-                                <p class="mb-0">Humidity: <span>50%</span></p>
+                            <div class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
+                                <h5 id="fiveDayOne">Mon</h5>
+                                <i id="fiveDayIconOne" class='fas fa-sun' style='font-size:36px'></i>
+                                <p>Temp: <span id="fiveDayTempOne">70</span>&deg;F</p>
+                                <p>Wind: <span id="fiveDayWindOne">5</span>MPH</p>
+                                <p class="mb-0">Humidity: <span id="fiveDayHumidityOne">50</span>%</p>
                             </div>
-                            <div id="fiveDayTwo" class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
-                                <h5>Tuesday</h5>
-                                <i class='fas fa-sun' style='font-size:36px'></i>
-                                <p>Temp: <span>70F</span></p>
-                                <p>Wind: <span>5MPH</span></p>
-                                <p class="mb-0">Humidity: <span>50%</span></p>
+                            <div class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
+                                <h5 id="fiveDayTwo">Tues</h5>
+                                <i id="fiveDayIconTwo" class='fas fa-sun' style='font-size:36px'></i>
+                                <p>Temp: <span id="fiveDayTempTwo">70</span>&deg;F</p>
+                                <p>Wind: <span id="fiveDayWindTwo">5</span>MPH</p>
+                                <p class="mb-0">Humidity: <span id="fiveDayHumidityTwo">50</span>%</p>
                             </div>
-                            <div id="fiveDayThree" class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
-                                <h5>Wednesday</h5>
-                                <i class='fas fa-sun' style='font-size:36px'></i>
-                                <p>Temp: <span>70F</span></p>
-                                <p>Wind: <span>5MPH</span></p>
-                                <p class="mb-0">Humidity: <span>50%</span></p>
+                            <div class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
+                                <h5 id="fiveDayThree">Wed</h5>
+                                <i id="fiveDayIconThree" class='fas fa-sun' style='font-size:36px'></i>
+                                <p>Temp: <span id="fiveDayTempThree">70</span>&deg;F</p>
+                                <p>Wind: <span id="fiveDayWindThree">5</span>MPH</p>
+                                <p class="mb-0">Humidity: <span id="fiveDayHumidityThree">50</span>%</p>
                             </div>
-                            <div id="fiveDayFour" class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
-                                <h5>Thursday</h5>
-                                <i class='fas fa-sun' style='font-size:36px'></i>
-                                <p>Temp: <span>70F</span></p>
-                                <p>Wind: <span>5MPH</span></p>
-                                <p class="mb-0">Humidity: <span>50%</span></p>
+                            <div class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
+                                <h5 id="fiveDayFour">Thurs</h5>
+                                <i id="fiveDayIconFour" class='fas fa-sun' style='font-size:36px'></i>
+                                <p>Temp: <span id="fiveDayTempFour">70</span>&deg;F</p>
+                                <p>Wind: <span id="fiveDayWindFour">5</span>MPH</p>
+                                <p class="mb-0">Humidity: <span id="fiveDayHumidityFour">50</span>%</p>
                             </div>
-                            <div id="fiveDayFive" class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
-                                <h5>Friday</h5>
-                                <i class='fas fa-sun' style='font-size:36px'></i>
-                                <p>Temp: <span>70F</span></p>
-                                <p>Wind: <span>5MPH</span></p>
-                                <p class="mb-0">Humidity: <span>50%</span></p>
+                            <div class="fiveDayBlock list-inline-item col-12 col-lg-2 mt-3 p-2">
+                                <h5 id="fiveDayFive">Fri</h5>
+                                <i id="fiveDayIconFive" class='fas fa-sun' style='font-size:36px'></i>
+                                <p>Temp: <span id="fiveDayTempFive">70</span>&deg;F</p>
+                                <p>Wind: <span id="fiveDayWindFive">5</span>MPH</p>
+                                <p class="mb-0">Humidity: <span id="fiveDayHumidityFive">50</span>%</p>
                             </div>
                         </div>
                     </div>
@@ -138,8 +139,10 @@
         </div>
     </div>
     
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
 <script src="https://kit.fontawesome.com/49799882d8.js" crossorigin="anonymous"></script>
-<script href="./script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
