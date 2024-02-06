@@ -20,6 +20,14 @@ header {
     color: white;
 }
 
+#clearCityHistory {
+    color: black;
+}
+
+#clearCityHistory:hover {
+    color: white;
+}
+
 .fiveDayBlock {
     background-color: var(--darkBlue);
     color: white;
