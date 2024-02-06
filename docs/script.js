@@ -24,6 +24,7 @@ $(function() {
         currentDate = $('#currentDate'),
         currentCityTemp = $('#currentCityTemp'),
         currentCityWind = $('#currentCityWind'),
+        currentCityIconZero = $('#currentCityIconZero'),
         fiveDayOne = $('#fiveDayOne'),
         fiveDayTwo = $('#fiveDayTwo'),
         fiveDayThree = $('#fiveDayThree'),
@@ -174,6 +175,11 @@ $(function() {
         let currentTemperature = Math.round(data.main.temp);
         let roundedWindSpeed = data.wind.speed.toFixed(1);
         let currentDateZero = dayjs().format('dddd MMMM D, YYYY');
+
+        console.log(data.weather[0].main);
+
+        let currentIconZero = data.weather[0].main;
+        currentCityIconZero.removeClass('fas fa-sun').addClass(iconSelector(currentIconZero));
 
         currentCity.text(data.name + ', ' + data.sys.country);
         currentDate.text(currentDateZero);
