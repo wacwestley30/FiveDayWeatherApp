@@ -100,7 +100,7 @@ $(function() {
     };
 
     function getCurrentWeather(city) {
-        var requestCurrentUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&lang=en&units=imperial&limit=1&appid=' + APIKey;
+        var requestCurrentUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&lang=en&units=imperial&limit=1&appid=' + APIKey;
         fetch(requestCurrentUrl)
             .then(function (response) {
                 if(response.ok) {
@@ -184,7 +184,7 @@ $(function() {
 
     // Really like seperating the get functions from the display functions like some of the examples we have been given up to this point so I used that idea to break up tasks for my project
     function getFiveDayForecast(city) {
-        var requestFiveDayUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&lang=en&units=imperial&limit=1&appid=' + APIKey;
+        var requestFiveDayUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&lang=en&units=imperial&limit=1&appid=' + APIKey;
 
         fetch(requestFiveDayUrl)
             .then(function (response) {
